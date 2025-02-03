@@ -3,6 +3,7 @@ import { CartComponent } from './Components/cart/cart.component';
 import { TempratureConverterComponent } from './Components/temprature-converter/temprature-converter.component';
 import { FormComponent } from './Components/form/form.component';
 import { RandomQuoteComponent } from './Components/random-quote/random-quote.component';
+import { GalleryComponent } from './Components/gallery/gallery.component';
 
 
 export const routes: Routes = [
@@ -27,4 +28,8 @@ export const routes: Routes = [
     path:"random",
     component:RandomQuoteComponent
    },
+   {
+    path:"gallery",
+    component:GalleryComponent
+   }
 ];

@@ -1,0 +1,81 @@
+<div class="w-full min-h-screen flex flex-col items-center pt-20 bg-gray-600 text-gray-100">
+
+    <!-- Navbar (Fixed) -->
+    
+
+    <!-- Main Container -->
+    <div class="max-w-5xl  mx-auto p-10 bg-gray-900 text-gray-100 rounded-lg shadow-xl mt-24">
+        
+        <!-- Input and Button Section -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-6">
+            
+            <input 
+                type="text" 
+                [(ngModel)]="inputData" 
+                placeholder="Enter image URL" 
+                class="w-full sm:flex-1 p-3 bg-gray-800 border border-gray-700 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-100 placeholder-gray-400 transition-all"
+            >
+            <button 
+                (click)="adddata()" 
+                class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all transform hover:scale-105"
+            >
+                Add Image
+            </button>
+        </div>
+
+        <!-- Image Gallery (Scrollable) -->
+        <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4 max-h-[70vh] overflow-y-auto p-4">
+
+            <!-- Static Images -->
+            <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
+                <img 
+                    src="https://images.ctfassets.net/hrltx12pl8hq/3Z1N8LpxtXNQhBD5EnIg8X/975e2497dc598bb64fde390592ae1133/spring-images-min.jpg" 
+                    alt="Spring" 
+                    class="w-full h-40 object-cover rounded-lg"
+                >
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <p class="text-white text-sm font-medium">Spring</p>
+                </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
+                <img 
+                    src="https://img.freepik.com/free-vector/phishing-account-concept_23-2148538968.jpg" 
+                    alt="Phishing" 
+                    class="w-full h-40 object-cover rounded-lg"
+                >
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <p class="text-white text-sm font-medium">Phishing</p>
+                </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
+                <img 
+                    src="https://img.freepik.com/free-vector/placeholder-concept-illustration_114360-4983.jpg" 
+                    alt="Placeholder" 
+                    class="w-full h-40 object-cover rounded-lg"
+                >
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <p class="text-white text-sm font-medium">Placeholder</p>
+                </div>
+            </div>
+
+            <!-- Dynamic Images -->
+            @for (item of Data; track $index) {
+                <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
+                    <img 
+                        [src]="item" 
+                        alt="User " 
+                        class="w-full h-40 object-cover rounded-lg"
+                    >
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <p class="text-white text-sm font-medium">User Image</p>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</div>
